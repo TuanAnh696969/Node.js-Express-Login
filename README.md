@@ -10,12 +10,10 @@ Xác thực dựa trên amc thông báo.
 Có ba phần quan trọng của JWT: Header, Payload, Signature. Chúng cùng nhau được kết hợp thành một cấu trúc tiêu chuẩn: header.payload.signature.
 
 Khách hàng thường đính kèm JWT trong tiêu đề Ủy quyền với tiền tố Bearer:
-
-Ủy quyền: Người mang [tiêu đề].[tải trọng].[chữ ký]
+Authorization: Bearer [header].[payload].[signature]
 
 Hoặc chỉ trong tiêu đề x-access-token:
-
-x-access-token: [header].[payload].[signature]
+x-access-token: [header].[payload].[signature
 
 
 #
@@ -24,8 +22,7 @@ Chúng tôi sẽ xây dựng một ứng dụng Node.js Express trong đó:
 - User can signup new account, or login with username & password.
 - User information will be stored in PostgreSQL database
 - By User’s role (admin, moderator, user), we authorize the User to access resources
-
-These are APIs that we need to provide:
+Đây là những API mà chúng tôi cần cung cấp:
 
 
 
@@ -33,6 +30,9 @@ These are APIs that we need to provide:
 Quy trình đăng ký và đăng nhập bằng xác thực JWT
 
 ![image](https://user-images.githubusercontent.com/104268054/227715781-60cb40eb-b5c3-4680-bf8c-38d86afe077c.png)
+
+#
+JWT hợp pháp phải được thêm vào Tiêu đề HTTP x-access-token nếu Máy khách truy cập các tài nguyên được bảo vệ.
 
 ![image](https://user-images.githubusercontent.com/104268054/227715785-cdc93138-45f5-46c7-b20e-4e7f7ccdffb8.png)
 
