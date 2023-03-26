@@ -19,12 +19,17 @@ x-access-token: [header].[payload].[signature
 #
 Chúng tôi sẽ xây dựng một ứng dụng Node.js Express trong đó:
 
-- User can signup new account, or login with username & password.
-- User information will be stored in PostgreSQL database
-- By User’s role (admin, moderator, user), we authorize the User to access resources
+- Người dùng có thể đăng ký tài khoản mới hoặc đăng nhập bằng tên người dùng và mật khẩu.
+- Thông tin người dùng sẽ được lưu trữ trong cơ sở dữ liệu PostgreSQL
+- Theo vai trò của Người dùng (quản trị viên, người điều hành, người dùng), chúng tôi cấp quyền cho Người dùng truy cập tài nguyên
 Đây là những API mà chúng tôi cần cung cấp:
+post("/api/auth/signup")
+post("/api/auth/signin")
 
-
+get("/api/test/all")
+get("/api/test/admin")
+get("/api/test/user")
+get("/api/test/mod")
 
 #
 Quy trình đăng ký và đăng nhập bằng xác thực JWT
