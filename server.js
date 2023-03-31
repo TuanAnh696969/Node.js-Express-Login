@@ -27,6 +27,7 @@ db.sequelize.sync({force: true}).then(() => {
   initial();
 });
 
+
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to @Tuananh00069 application." });
